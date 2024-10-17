@@ -2,7 +2,7 @@
 
 Application that allows users to filter vehicles by type and model year, and view the results on a separate page(/result/id/year).
 
-Demo: car-dealer-app.vercel
+Demo: [car-dealer-app-demo.vercel.app](https://car-dealer-app-demo.vercel.app/)
 
 ## Screenshots
 ![alt text](home.PNG)
