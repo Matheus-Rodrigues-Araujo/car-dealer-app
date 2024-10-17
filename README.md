@@ -43,8 +43,6 @@ API Integration: The app fetches vehicle data from external APIs using Axios.
   
 - **`/models`**: Stores TypeScript interfaces and types, ensuring that the data structure is well-defined and consistent.
 
-- **`/pages`**: Contains the application's pages. Dynamic routes are organized in folders with brackets (e.g., `[id]` and `[year]`).
-
 - **`/lib`**: Contains helper and API functions that encapsulate the logic for interacting with external services, separating this logic from the presentation of components.
 
 ## Environment Variables
