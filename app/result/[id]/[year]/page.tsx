@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 const Result = ({ params }: { params: { id: string; year: string } }) => {
   const { id, year } = params;
   const [vehicle, setVehicle] = useState([]);
@@ -13,7 +13,7 @@ const Result = ({ params }: { params: { id: string; year: string } }) => {
       const responseData = await response.data;
       setVehicle(responseData["Results"]);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   };
 
@@ -23,8 +23,10 @@ const Result = ({ params }: { params: { id: string; year: string } }) => {
 
   return (
     <div className="p-8 grid gap-5 rounded-lg bg-white">
-      <h1 className="text-xl font-bold" >Vechicle Data</h1>
-      <h2 className="text-lg font-medium" >ID: {id} | YEAR: {year}</h2>
+      <h1 className="text-xl font-bold">Vechicle Data</h1>
+      <h2 className="text-lg font-medium">
+        ID: {id} | YEAR: {year}
+      </h2>
       <div className="flex flex-wrap gap-2">
         {vehicle &&
           vehicle.map((item, key) => (
