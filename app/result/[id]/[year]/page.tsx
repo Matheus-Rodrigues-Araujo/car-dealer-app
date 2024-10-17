@@ -1,5 +1,5 @@
-import axios from "axios";
 import { Suspense } from "react";
+import VehicleData from "../../../../components/vehicleData";
 
 export async function generateStaticParams() {
   const vehicles = [
@@ -14,37 +14,6 @@ export async function generateStaticParams() {
   }));
 }
 
-const fetchVehicleData = async (id: string, year: string) => {
-  const url = `${process.env.NEXT_PUBLIC_VEHICLE_URL}/makeId/${id}/modelyear/${year}?format=json`;
-  try {
-    const response = await axios.get(url);
-    return response.data.Results;
-  } catch (error) {
-    console.error(error);
-    return [];
-  }
-};
-
-const VehicleData = async ({ id, year }: { id: string; year: string }) => {
-  const vehicleData = await fetchVehicleData(id, year);
-
-  return (
-    <div className="flex flex-wrap gap-2">
-      {vehicleData &&
-        vehicleData.map((item:any) => (
-          <div key={item["MAKE_ID"]} className="w-64 border-2 p-2">
-            <div>
-              <p>MAKE_ID: {item["Make_ID"]}</p>
-              <p>MAKE_NAME: {item["Make_Name"]}</p>
-              <p>MODEL_ID: {item["Model_ID"]}</p>
-              <p>MODEL_NAME: {item["Model_Name"]}</p>
-            </div>
-          </div>
-        ))}
-    </div>
-  );
-};
-
 const VehiclePage = ({ params }: { params: { id: string; year: string } }) => {
   const { id, year } = params;
 
@@ -54,7 +23,7 @@ const VehiclePage = ({ params }: { params: { id: string; year: string } }) => {
       <h2 className="text-lg font-medium">
         ID: {id} | YEAR: {year}
       </h2>
-      
+
       <Suspense fallback={<div>Loading vehicle data...</div>}>
         <VehicleData id={id} year={year} />
       </Suspense>
