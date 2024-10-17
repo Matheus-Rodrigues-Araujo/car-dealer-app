@@ -2,10 +2,12 @@
 
 Application that allows users to filter vehicles by type and model year, and view the results on a separate page(/result/id/year).
 
+Demo: car-dealer-app.vercel
+
 ## Screenshots
 ![alt text](home.PNG)
 ![alt text](disabledbtn.PNG)
-![alt text](vehicle.PNG)
+![alt text](data.PNG)
 
 ## Install the dependencies
 ```bash

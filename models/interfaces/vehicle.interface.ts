@@ -1,6 +1,6 @@
 export interface Vehicle {
-    "MAKE_ID": string;
-    "MAKE_NAME": string;
-    "MODEL_ID": string;
-    "MODEL_NAME": string;
-  }
+  Make_ID: number;
+  Make_Name: string;
+  Model_ID: number;
+  Model_Name: string;
+}
